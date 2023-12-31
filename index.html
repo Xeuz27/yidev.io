@@ -24,7 +24,7 @@
   <meta name="twitter:site" content="@yidev27" />
   <meta name="twitter:creator" content="@yidev27" />
   <link rel="icon" type="image/png" href="favicon-32x32.png" class="dark:block" alt="dark fav icon">
-  <link rel="icon" type="image/png" href="favicon-32x32(1).png" class="dark:hidden" alt="dark fav icon">
+  <link rel="icon" type="image/png" href="favicon-32x32(1).png" id="favicon" class="dark:hidden" alt="LIGHT fav icon">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -172,6 +172,19 @@
   <div class="flex-block max-w-xl p-4 md:pd-8 mx-auto text-center">
     Copyleft © 2023 🚀 Per Aspera Ad Astra
   </div>
+  <script>
+    // Check if dark mode is preferred
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Swap favicons based on dark mode preference
+    const favicon = document.getElementById('favicon');
+    const darkFavicon = document.getElementById('dark-favicon');
+
+    if (isDarkMode) {
+      favicon.remove();
+      darkFavicon.setAttribute('id', 'favicon');
+    }
+  </script>
 </body>
 
 </html>
