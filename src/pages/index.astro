@@ -114,27 +114,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         </footer>
     </main>
     <script>
-        function isMobileUserAgent() {
-            const userAgent = navigator.userAgent;
+        import { isMobileDevice } from '@/utils';
 
-            // Regex patterns for mobile user agents
-            const mobileAgents = [
-                /Android/i,
-                /webOS/i,
-                /iPhone/i,
-                /iPad/i,
-                /iPod/i,
-                /BlackBerry/i,
-                /Windows Phone/i,
-                /Opera Mini/i,
-                /IEMobile/i,
-            ];
-
-            // Check if the userAgent matches any of the mobile patterns
-            return mobileAgents.some((mobileAgent) => mobileAgent.test(userAgent));
-        }
-
-        let maxStars = isMobileUserAgent() ? 20 : 75;
+        let maxStars = isMobileDevice() ? 35 : 75;
+        let maxTop = isMobileDevice() ? -25 : -50;
+        let maxLeft = isMobileDevice() ? 0 : -50;
 
         function getRandomArbitrary(min: number, max: number) {
             return Math.random() * (max - min) + min;
@@ -144,8 +128,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
         for (let index = 0; index < maxStars; index++) {
             const animationDelay = getRandomArbitrary(100, 3500);
-            const randomNumberTop = getRandomArbitrary(-50, 100);
-            const randomNumberLeft = getRandomArbitrary(-50, 100);
+            const randomNumberTop = getRandomArbitrary(maxTop, 100);
+            const randomNumberLeft = getRandomArbitrary(maxLeft, 100);
 
             const shootingStarDiv = document.createElement('div');
             shootingStarDiv.classList.add('shooting_star');
