@@ -8,9 +8,9 @@ export interface Props {
 }
 
 const { title, description = siteConfig.description, ogImage } = Astro.props;
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const socialImageURL = new URL(ogImage ? ogImage : '/yidevio2.png', Astro.url.href);
+const socialImageURL = new URL(ogImage ? ogImage : '/yidevio.png', Astro.site);
 
 const titleSeparator = '•';
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
@@ -23,7 +23,7 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<!-- <link rel="canonical" href={canonicalURL} /> -->
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>

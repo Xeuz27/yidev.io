@@ -4,11 +4,12 @@ import tailwind from '@astrojs/tailwind';
 
 /*add site  */
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
-  output: "server",
-  adapter: vercel()
+    site: 'https://yidev.vercel.app/',
+    integrations: [tailwind()],
+    output: 'server',
+    adapter: vercel(),
 });
