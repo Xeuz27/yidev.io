@@ -1,159 +1,25 @@
 ---
 import Backgrounds from '@/components/Backgrounds.astro';
-import BannerLink from '@/components/BannerLink.astro';
+import BodySection from '@/components/BodySection.astro';
 import Card from '@/components/Card.astro';
+import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
-import Whatsapp from '@/components/icons/Whatsapp.astro';
+import LinksSection from '@/components/LinksSection.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="/yidevio.png">
+<BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="/og.png">
     <Backgrounds />
     <main class="z-50 px-4 pt-6">
         <Card>
-            <Header title="Jesús Alejandro Gutierréz Guevara">
-                <div class="flex flex-col justify-center gap-1 min-[426px]:justify-start">
-                    <ul class="flex justify-center gap-x-2 text-sm text-gray-200/80">
-                        <li>
-                            <a
-                                title="visitar el perfil de instagram @yidev27"
-                                href="https://www.instagram.com/yidev27/">@yidev27</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                title="visitar el perfil de github @xeuz27"
-                                href="https://github.com/Xeuz27">@xeuz27</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                title="visitar el perfil de instagram @yisus427g"
-                                href="https://www.instagram.com/yisus427g/">@yisus427g</a
-                            >
-                        </li>
-                    </ul>
-                    <h2 class="text-sm tracking-wide text-white">
-                        Desarrollador Fullstack, creando mi primera pagina web en el 2021.
-                    </h2>
-                    <h3 class="text-sm tracking-wide text-gray-50/80">
-                        #Javascript #React | Mcbo Ve
-                    </h3>
-                </div>
-            </Header>
-            <section>
-                <div class="flex w-full flex-col border-t border-gray-300 px-4 py-4">
-                    <!-- <IconsSection /> -->
-                    <p
-                        class="text-pretty text-xs leading-[18px] tracking-wider text-gray-100 sm:text-sm"
-                    >
-                        Comprometido en impulsar el avance tecnológico, enfocado en <strong
-                            class="text-gray-650 font-medium"
-                        >
-                            Guiar a emprendedores y pequeños empresarios</strong
-                        > hacia nuevas perspectivas de éxito en el ámbito digital. Brindando conocimientos
-                        y
-                        <strong class="text-gray-650 font-medium">
-                            estrategias para destacar y prosperar en el mundo tecnológico.</strong
-                        >
-                    </p>
-                </div>
-                <ul class="tracking-wide">
-                    <li>
-                        <BannerLink
-                            rel="dofollow"
-                            href="https://cv-me-zeta.vercel.app/"
-                            classes="bg-indigo-400/40 text-white/80 hover:bg-indigo-800/40 hover:text-white"
-                        >
-                            <span>💼</span>
-                            Portafolio
-                            <span>💻</span>
-                        </BannerLink>
-                    </li>
-                    <li>
-                        <BannerLink
-                            rel="nofollow"
-                            title="enviar un mensaje de Whatsapp a Jesus al numero de +58 (414) 617 2019"
-                            classes="bg-green-400/40 text-white/80 hover:text-white hover:bg-green-800/30"
-                            href="whatsapp://send?phone=584146172019?text=Hola,%20me%20interesa%20recibir%20una%20consulta"
-                        >
-                            <span>💬</span>
-                            Whatsapp
-                            <span>
-                                <Whatsapp />
-                            </span>
-                        </BannerLink>
-                    </li>
-                    <li>
-                        <BannerLink
-                            rel="nofollow"
-                            title="enviar un correo electronico a Jesus al correo de yidev27@gmail.com"
-                            classes="bg-orange-400/40 text-white/80 hover:text-white hover:bg-orange-800/30"
-                            href="mailto:yidev27@gmail.com"
-                        >
-                            <span>💬</span>
-                            Email
-                            <span>📧</span>
-                        </BannerLink>
-                    </li>
-                </ul>
-            </section>
+            <Header title="Jesús Alejandro Gutierréz Guevara" />
+            <BodySection />
+            <LinksSection />
         </Card>
-        <footer class="mx-auto flex max-w-xl flex-col gap-1 py-6 text-center text-slate-300/70">
-            <p>Copyleft © 2024 🚀 Per Aspera Ad Astra</p>
-            <p class="font-semibold tracking-wider text-slate-300">Desarrollado por @yidev27</p>
-            <a
-                title="visitar repo de gndx"
-                href="https://github.com/gndx/gndx.io"
-                target="_blank"
-                rel="nofollow"
-                class="font-semibold text-slate-300/70 underline-offset-2 hover:underline"
-            >
-                inspirado en @gndx
-            </a>
-        </footer>
+        <Footer />
     </main>
     <script>
-        import { isNotMobileDevice } from '@/utils';
-        let maxStars = isNotMobileDevice() ? 75 : 35;
-
-        let minTop = isNotMobileDevice() ? 1 : 1;
-        let maxTop = isNotMobileDevice() ? 100 : 70;
-
-        let minLeft = isNotMobileDevice() ? -60 : -180;
-        let maxLeft = isNotMobileDevice() ? 80 : 10;
-
-        function getRandomArbitrary(min: number, max: number) {
-            return Math.random() * (max - min) + min;
-        }
-
-        const nightDiv = document.getElementById('night');
-
-        for (let index = 0; index < maxStars; index++) {
-            const animationDelay = getRandomArbitrary(100, 3500);
-            const randomNumberTop = getRandomArbitrary(minTop, maxTop);
-            const randomNumberLeft = getRandomArbitrary(minLeft, maxLeft);
-
-            const shootingStarDiv = document.createElement('div');
-            shootingStarDiv.classList.add('shooting_star');
-
-            function setProperty(left: number, top: number, animationDelay: number) {
-                shootingStarDiv.style.left = `${left}%`;
-                shootingStarDiv.style.top = `${top}%`;
-                shootingStarDiv.style.animationDelay = `${animationDelay}ms`;
-            }
-            function changeAnimationTime() {
-                setProperty(randomNumberLeft, randomNumberTop, animationDelay);
-            }
-            changeAnimationTime();
-            nightDiv?.appendChild(shootingStarDiv);
-        }
-
-        // Check if dark mode is preferred
-        // const isDarkMode =
-        //     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // const favicon = document.getElementById('favicon');
-        // favicon.href = isDarkMode ? 'favicon-32x32(1).png' : 'favicon-32x32.png';
+        import { backgroundStars } from '@/utils';
+        backgroundStars();
     </script>
 </BaseLayout>
