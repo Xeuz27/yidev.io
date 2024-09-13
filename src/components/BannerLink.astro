@@ -1,0 +1,16 @@
+---
+const { classes, href, title, rel } = Astro.props;
+---
+
+<a
+    class:list={[
+        'flex w-full cursor-pointer items-center justify-between border-t border-white px-4 py-2 text-center text-sm font-bold',
+        classes,
+    ]}
+    title={title}
+    href={href}
+    rel={rel}
+    target="_blank"
+>
+    <slot />
+</a>

@@ -1,73 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- HTML Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="robots" content="follow, index" />
-    <meta property="og:url" content="https://yidev.io" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Jesús Gutierréz - Web Developer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Jesús Gutiérrez - Fullstack Freelance Developer</title>
-    <meta
-      name="title"
-      content="Jesús Gutiérrez - Fullstack Freelance Developer"
-    />
-    <meta
-      name="description"
-      content="Desarrollador Fullstack, creando mi primera página web en el
-    2021, Actualmente Freelancer #JavaScript #React. Mcbo Ve"
-    />
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://xeuz27.github.io/yidev.io/" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Jesús Gutiérrez - Fullstack Freelance Developer"
-    />
-    <meta
-      property="og:description"
-      content="Desarrollador Fullstack, creando mi primera página web en el
-      2021, Actualmente Freelancer #JavaScript #React. Mcbo Ve"
-    />
-    <meta
-      property="og:image"
-      content="https://ik.imagekit.io/0oguwfou0i/yidevio2.PNG?updatedAt=1706432364774"
-    />
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="xeuz27.github.io" />
-    <meta property="twitter:url" content="https://xeuz27.github.io/yidev.io/" />
-    <meta
-      name="twitter:title"
-      content="Jesús Gutiérrez - Fullstack Freelance Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Desarrollador Fullstack, creando mi primera página web en el
-      2021, Actualmente Freelancer #JavaScript #React. Mcbo Ve"
-    />
-    <meta
-      name="twitter:image"
-      content="https://ik.imagekit.io/0oguwfou0i/yidevio2.PNG?updatedAt=1706432364774"
-    />
-    <meta property="og:locale" content="es_ES" />
-    <meta name="twitter:site" content="@yidev27" />
-    <meta name="twitter:creator" content="@yidev27" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="yidev-logo-bluebg.png"
-      id="favicon"
-      alt="default-light fav icon"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-
   <body class="h-[111vh] min-[638px]:h-screen w-full overflow-hidden py-5">
     <main class="flex justify-center items-center z-50">
       <section class="absolute max-[638px]:top-0 right-0 left-0">
@@ -77,18 +9,6 @@
               class="px-4 py-2 sm:px-6 flex flex-col sm:flex-row justify-between"
             >
               <div>
-                <h1
-                  class="text-4xl max-[638px]:text-3xl leading-6 font-bold text-gray-900 flex gap-2"
-                >
-                  Jesús Gutierréz
-                  <img
-                    width="24"
-                    height="24"
-                    src="https://img.icons8.com/color/48/venezuela.png"
-                    alt="venezuela"
-                  />
-                </h1>
-
                 <h2 class="text-sm pt-2 text-gray-500">
                   @yidev27 - @xeuz27 - @yisus427g
                 </h2>
@@ -98,17 +18,6 @@
                   Desarrollador Fullstack, creando mi primera página web en el
                   2021, Actualmente Freelancer #JavaScript #React. Mcbo Ve
                 </p>
-              </div>
-              <div
-                class="w-[55%] sm:w-[35%] min-h-fit mx-auto py-4 pt-5 sm:p-0"
-              >
-                <img
-                  class="rounded-sm max-h-32 mx-auto sm:h-full"
-                  decoding="async"
-                  loading="eager"
-                  src="./AlbedoBase_XL_guy_of_mid_20s_kind_of_hipster_with_snapback_0.jpg"
-                  alt="jesús gutierréz"
-                />
               </div>
             </div>
             <div class="border-t border-gray-300">
@@ -314,41 +223,5 @@
         </div>
       </section>
     </main>
-    <div id="night" class="night z-10"></div>
-    <script>
-      function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-
-      const nightDiv = document.getElementById("night");
-
-      for (let index = 0; index < 35; index++) {
-        const animationDelay = getRandomArbitrary(100, 3500);
-        const randomNumberTop = getRandomArbitrary(1, 100);
-        const randomNumberLeft = getRandomArbitrary(1, 100);
-
-        const shootingStarDiv = document.createElement("div");
-        shootingStarDiv.classList.add("shooting_star");
-
-        function setProperty(left, top, animationDelay) {
-          shootingStarDiv.style.left = `${left}%`;
-          shootingStarDiv.style.top = `${top}%`;
-          shootingStarDiv.style.animationDelay = `${animationDelay}ms`;
-        }
-        function changeAnimationTime() {
-          setProperty(randomNumberLeft, randomNumberTop, animationDelay);
-        }
-        changeAnimationTime();
-        nightDiv.appendChild(shootingStarDiv);
-      }
-
-      // Check if dark mode is preferred
-      const isDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      const favicon = document.getElementById("favicon");
-      favicon.href = isDarkMode ? "favicon-32x32(1).png" : "favicon-32x32.png";
-    </script>
   </body>
 </html>

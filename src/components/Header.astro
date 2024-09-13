@@ -1,0 +1,30 @@
+---
+const { title } = Astro.props;
+---
+
+<section class="flex h-full flex-col items-center gap-5 px-4 py-4">
+    <div class="flex h-fit w-full flex-col md:gap-4">
+        <div class="flex items-center justify-center gap-2">
+            <h1
+                class="text-balance text-center text-[20px] font-bold leading-6 tracking-tight text-gray-50 min-[360px]:text-[24px] min-[425px]:text-[26px] md:text-3xl"
+            >
+                {title}
+            </h1>
+            <img
+                class="mt-[1px] size-11"
+                src="https://img.icons8.com/color/48/venezuela.png"
+                alt="icono de bandera de Venezuela"
+            />
+        </div>
+        <div class="mx-auto min-h-fit w-[60%] pt-5 sm:p-0">
+            <img
+                class="mx-auto h-full max-h-36 rounded-sm"
+                decoding="async"
+                loading="eager"
+                src="/me.jpg"
+                alt="Avatar creado con Inteligencia artificial de Jesús Alejandro  Gutierréz Guevara"
+            />
+        </div>
+    </div>
+    <slot />
+</section>

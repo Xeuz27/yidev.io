@@ -1,0 +1,154 @@
+---
+import BannerLink from '@/components/BannerLink.astro';
+import Card from '@/components/Card.astro';
+import Header from '@/components/Header.astro';
+import Whatsapp from '@/components/icons/Whatsapp.astro';
+import IconsSection from '@/components/IconsSection.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="">
+    <div class="absolute inset-0">
+        <!-- <div
+            class="absolute inset-0 z-20 bg-[radial-gradient(1600px_at_105%_1720px,#cb2137,transparent)]"
+        >
+        </div> -->
+        <div
+            class="absolute inset-0 z-10 bg-gradient-to-br from-sky-600 from-[-150%] to-black to-[120%]"
+        >
+            <div
+                class="absolute inset-0 z-20 bg-[radial-gradient(800px_at_100%_140%,#0c0b3a,transparent)]"
+            >
+            </div>
+        </div>
+        <main class="z-20 px-4"></main>
+        <Card>
+            <Header title="Jesús Alejandro Gutierréz Guevara">
+                <div class="flex flex-col justify-center gap-y-1 min-[426px]:justify-start">
+                    <ul class="flex justify-center gap-x-2 text-sm text-gray-200/80">
+                        <li>
+                            <a
+                                title="visitar el perfil de instagram de @dagnacedeno"
+                                href="https://www.instagram.com/yidev27/">@yidev27</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                title="visitar el perfil de instagram de @mdicreativos"
+                                href="https://www.instagram.com/mdicreativos/">@xeuz27</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                title="visitar el perfil de instagram de @remax.ultra.ve"
+                                href="https://www.instagram.com/yisus427g/">@yisus427g</a
+                            >
+                        </li>
+                    </ul>
+                    <h2 class="text-sm tracking-wide text-gray-50">
+                        Desarrollador Fullstack, creando mi primera pagina web en el 2021.
+                        #Javascript #React | Mcbo Ve
+                    </h2>
+                </div>
+            </Header>
+            <section>
+                <div class="flex w-full flex-col border-t border-gray-300 px-4 py-4">
+                    <!-- <IconsSection /> -->
+                    <p
+                        class="text-pretty text-xs leading-[18px] tracking-wider text-gray-100 sm:text-sm"
+                    >
+                        Comprometido en impulsar el avance tecnológico, mi enfoque está en <strong
+                            class="text-gray-650 font-medium"
+                        >
+                            liderar a emprendedores y pequeños empresarios</strong
+                        > hacia nuevas perspectivas de éxito en el ámbito digital. Brindando conocimientos
+                        y
+                        <strong class="text-gray-650 font-medium">
+                            estrategias para destacar y prosperar en el mundo tecnológico.</strong
+                        >
+                    </p>
+                </div>
+                <div class="tracking-wide">
+                    <BannerLink
+                        rel="dofollow"
+                        href="https://cv-me-zeta.vercel.app/"
+                        classes="bg-indigo-400/40 text-white/80 hover:bg-indigo-800/40 hover:text-white"
+                    >
+                        <span>💼</span>
+                        Portafolio
+                        <span>💻</span>
+                    </BannerLink>
+                    <BannerLink
+                        rel="nofollow"
+                        title="enviar un mensaje de Whatsapp a Jesus al numero de +58 (414) 617 2019"
+                        classes="bg-green-400/40 text-white/80 hover:text-white hover:bg-green-800/30"
+                        href="whatsapp://send?phone=584146172019?text=Hola,%20me%20interesa%20recibir%20una%20consulta"
+                    >
+                        <span>💬</span>
+                        Whatsapp
+                        <span>
+                            <Whatsapp />
+                        </span>
+                    </BannerLink>
+                    <BannerLink
+                        rel="nofollow"
+                        title="enviar un correo electronico a Jesus al correo de yidev27@gmail.com"
+                        classes="bg-orange-400/40 text-white/80 hover:text-white hover:bg-orange-800/30"
+                        href="mailto:yidev27@gmail.com"
+                    >
+                        <span>💬</span>
+                        Email
+                        <span>📧</span>
+                    </BannerLink>
+                </div>
+            </section>
+        </Card>
+        <div class="mx-auto flex max-w-xl flex-col gap-1 py-6 text-center text-slate-300/70">
+            <p>Copyleft © 2024 🚀 Per Aspera Ad Astra</p>
+            <p class="font-semibold tracking-wider text-slate-300">Desarrollado por @yidev27</p>
+            <a
+                title="visitar repo de gndx"
+                href="https://github.com/gndx/gndx.io"
+                target="_blank"
+                rel="nofollow"
+                class="font-semibold text-slate-300/70 underline-offset-2 hover:underline"
+            >
+                inspirado en @gndx
+            </a>
+        </div>
+    </div>
+    <script>
+        function getRandomArbitrary(min: number, max: number) {
+            return Math.random() * (max - min) + min;
+        }
+
+        const nightDiv = document.getElementById('night');
+
+        for (let index = 0; index < 75; index++) {
+            const animationDelay = getRandomArbitrary(100, 3500);
+            const randomNumberTop = getRandomArbitrary(-50, 100);
+            const randomNumberLeft = getRandomArbitrary(-50, 100);
+
+            const shootingStarDiv = document.createElement('div');
+            shootingStarDiv.classList.add('shooting_star');
+
+            function setProperty(left: number, top: number, animationDelay: number) {
+                shootingStarDiv.style.left = `${left}%`;
+                shootingStarDiv.style.top = `${top}%`;
+                shootingStarDiv.style.animationDelay = `${animationDelay}ms`;
+            }
+            function changeAnimationTime() {
+                setProperty(randomNumberLeft, randomNumberTop, animationDelay);
+            }
+            changeAnimationTime();
+            nightDiv?.appendChild(shootingStarDiv);
+        }
+
+        // Check if dark mode is preferred
+        // const isDarkMode =
+        //     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // const favicon = document.getElementById('favicon');
+        // favicon.href = isDarkMode ? 'favicon-32x32(1).png' : 'favicon-32x32.png';
+    </script>
+</BaseLayout>
