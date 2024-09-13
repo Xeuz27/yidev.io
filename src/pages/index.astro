@@ -7,7 +7,7 @@ import Whatsapp from '@/components/icons/Whatsapp.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="">
+<BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="/yidevio.png">
     <Backgrounds />
     <main class="z-50 px-4 pt-6">
         <Card>
@@ -114,11 +114,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         </footer>
     </main>
     <script>
-        import { isMobileDevice } from '@/utils';
+        import { isNotMobileDevice } from '@/utils';
+        let maxStars = isNotMobileDevice() ? 75 : 35;
 
-        let maxStars = isMobileDevice() ? 35 : 75;
-        let maxTop = isMobileDevice() ? -25 : -50;
-        let maxLeft = isMobileDevice() ? 0 : -50;
+        let minTop = isNotMobileDevice() ? 1 : 1;
+        let maxTop = isNotMobileDevice() ? 100 : 70;
+
+        let minLeft = isNotMobileDevice() ? -60 : -180;
+        let maxLeft = isNotMobileDevice() ? 80 : 10;
 
         function getRandomArbitrary(min: number, max: number) {
             return Math.random() * (max - min) + min;
@@ -128,8 +131,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
         for (let index = 0; index < maxStars; index++) {
             const animationDelay = getRandomArbitrary(100, 3500);
-            const randomNumberTop = getRandomArbitrary(maxTop, 100);
-            const randomNumberLeft = getRandomArbitrary(maxLeft, 100);
+            const randomNumberTop = getRandomArbitrary(minTop, maxTop);
+            const randomNumberLeft = getRandomArbitrary(minLeft, maxLeft);
 
             const shootingStarDiv = document.createElement('div');
             shootingStarDiv.classList.add('shooting_star');
