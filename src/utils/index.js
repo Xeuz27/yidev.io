@@ -1,1 +1,1 @@
-export { isMobileDevice } from './isMobileDevice';
+export { isNotMobileDevice } from './isMobileDevice';
