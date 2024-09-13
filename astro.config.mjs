@@ -4,7 +4,11 @@ import tailwind from '@astrojs/tailwind';
 
 /*add site  */
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  output: "server",
+  adapter: vercel()
 });
