@@ -1,5 +1,5 @@
 ---
-import Backgrounds from '@/components/backgrounds.astro';
+import Backgrounds from '@/components/Backgrounds.astro';
 import BannerLink from '@/components/BannerLink.astro';
 import Card from '@/components/Card.astro';
 import Header from '@/components/Header.astro';
@@ -114,13 +114,35 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         </footer>
     </main>
     <script>
+        function isMobileUserAgent() {
+            const userAgent = navigator.userAgent;
+
+            // Regex patterns for mobile user agents
+            const mobileAgents = [
+                /Android/i,
+                /webOS/i,
+                /iPhone/i,
+                /iPad/i,
+                /iPod/i,
+                /BlackBerry/i,
+                /Windows Phone/i,
+                /Opera Mini/i,
+                /IEMobile/i,
+            ];
+
+            // Check if the userAgent matches any of the mobile patterns
+            return mobileAgents.some((mobileAgent) => mobileAgent.test(userAgent));
+        }
+
+        let maxStars = isMobileUserAgent() ? 20 : 75;
+
         function getRandomArbitrary(min: number, max: number) {
             return Math.random() * (max - min) + min;
         }
 
         const nightDiv = document.getElementById('night');
 
-        for (let index = 0; index < 75; index++) {
+        for (let index = 0; index < maxStars; index++) {
             const animationDelay = getRandomArbitrary(100, 3500);
             const randomNumberTop = getRandomArbitrary(-50, 100);
             const randomNumberLeft = getRandomArbitrary(-50, 100);
