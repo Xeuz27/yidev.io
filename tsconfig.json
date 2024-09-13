@@ -7,10 +7,10 @@
         "paths": {
             "@/components/*": ["src/components/*"],
             "@/layouts/*": ["src/layouts/*"],
-            "@/utils": ["src/utils/index.ts"],
+            "@/utils": ["src/utils/index.js"],
             "@/data/*": ["src/data/*"],
-            "@/site-config": ["src/data/site.config.ts"],
-        },
+            "@/site-config": ["src/data/site.config.ts"]
+        }
     },
-    "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist", "..**/old/*"],
+    "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist", "..**/old/*"]
 }
