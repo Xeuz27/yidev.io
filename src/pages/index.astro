@@ -1,55 +1,44 @@
 ---
+import Backgrounds from '@/components/backgrounds.astro';
 import BannerLink from '@/components/BannerLink.astro';
 import Card from '@/components/Card.astro';
 import Header from '@/components/Header.astro';
 import Whatsapp from '@/components/icons/Whatsapp.astro';
-import IconsSection from '@/components/IconsSection.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Jesus Alejandro Gutierrez Guevara" image="">
-    <div class="absolute inset-0">
-        <!-- <div
-            class="absolute inset-0 z-20 bg-[radial-gradient(1600px_at_105%_1720px,#cb2137,transparent)]"
-        >
-        </div> -->
-        <div
-            class="absolute inset-0 z-10 bg-gradient-to-br from-sky-600 from-[-150%] to-black to-[120%]"
-        >
-            <div
-                class="absolute inset-0 z-20 bg-[radial-gradient(800px_at_100%_140%,#0c0b3a,transparent)]"
-            >
-            </div>
-        </div>
-    </div>
-    <main class="z-50 px-4">
+    <Backgrounds />
+    <main class="z-50 px-4 pt-6">
         <Card>
             <Header title="Jesús Alejandro Gutierréz Guevara">
-                <div class="flex flex-col justify-center gap-y-1 min-[426px]:justify-start">
+                <div class="flex flex-col justify-center gap-1 min-[426px]:justify-start">
                     <ul class="flex justify-center gap-x-2 text-sm text-gray-200/80">
                         <li>
                             <a
-                                title="visitar el perfil de instagram de @dagnacedeno"
+                                title="visitar el perfil de instagram @yidev27"
                                 href="https://www.instagram.com/yidev27/">@yidev27</a
                             >
                         </li>
                         <li>
                             <a
-                                title="visitar el perfil de instagram de @mdicreativos"
-                                href="https://www.instagram.com/mdicreativos/">@xeuz27</a
+                                title="visitar el perfil de github @xeuz27"
+                                href="https://github.com/Xeuz27">@xeuz27</a
                             >
                         </li>
                         <li>
                             <a
-                                title="visitar el perfil de instagram de @remax.ultra.ve"
+                                title="visitar el perfil de instagram @yisus427g"
                                 href="https://www.instagram.com/yisus427g/">@yisus427g</a
                             >
                         </li>
                     </ul>
-                    <h2 class="text-sm tracking-wide text-gray-50">
+                    <h2 class="text-sm tracking-wide text-white">
                         Desarrollador Fullstack, creando mi primera pagina web en el 2021.
-                        #Javascript #React | Mcbo Ve
                     </h2>
+                    <h3 class="text-sm tracking-wide text-gray-50/80">
+                        #Javascript #React | Mcbo Ve
+                    </h3>
                 </div>
             </Header>
             <section>
@@ -58,10 +47,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                     <p
                         class="text-pretty text-xs leading-[18px] tracking-wider text-gray-100 sm:text-sm"
                     >
-                        Comprometido en impulsar el avance tecnológico, mi enfoque está en <strong
+                        Comprometido en impulsar el avance tecnológico, enfocado en <strong
                             class="text-gray-650 font-medium"
                         >
-                            liderar a emprendedores y pequeños empresarios</strong
+                            Guiar a emprendedores y pequeños empresarios</strong
                         > hacia nuevas perspectivas de éxito en el ámbito digital. Brindando conocimientos
                         y
                         <strong class="text-gray-650 font-medium">
@@ -69,42 +58,48 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                         >
                     </p>
                 </div>
-                <div class="tracking-wide">
-                    <BannerLink
-                        rel="dofollow"
-                        href="https://cv-me-zeta.vercel.app/"
-                        classes="bg-indigo-400/40 text-white/80 hover:bg-indigo-800/40 hover:text-white"
-                    >
-                        <span>💼</span>
-                        Portafolio
-                        <span>💻</span>
-                    </BannerLink>
-                    <BannerLink
-                        rel="nofollow"
-                        title="enviar un mensaje de Whatsapp a Jesus al numero de +58 (414) 617 2019"
-                        classes="bg-green-400/40 text-white/80 hover:text-white hover:bg-green-800/30"
-                        href="whatsapp://send?phone=584146172019?text=Hola,%20me%20interesa%20recibir%20una%20consulta"
-                    >
-                        <span>💬</span>
-                        Whatsapp
-                        <span>
-                            <Whatsapp />
-                        </span>
-                    </BannerLink>
-                    <BannerLink
-                        rel="nofollow"
-                        title="enviar un correo electronico a Jesus al correo de yidev27@gmail.com"
-                        classes="bg-orange-400/40 text-white/80 hover:text-white hover:bg-orange-800/30"
-                        href="mailto:yidev27@gmail.com"
-                    >
-                        <span>💬</span>
-                        Email
-                        <span>📧</span>
-                    </BannerLink>
-                </div>
+                <ul class="tracking-wide">
+                    <li>
+                        <BannerLink
+                            rel="dofollow"
+                            href="https://cv-me-zeta.vercel.app/"
+                            classes="bg-indigo-400/40 text-white/80 hover:bg-indigo-800/40 hover:text-white"
+                        >
+                            <span>💼</span>
+                            Portafolio
+                            <span>💻</span>
+                        </BannerLink>
+                    </li>
+                    <li>
+                        <BannerLink
+                            rel="nofollow"
+                            title="enviar un mensaje de Whatsapp a Jesus al numero de +58 (414) 617 2019"
+                            classes="bg-green-400/40 text-white/80 hover:text-white hover:bg-green-800/30"
+                            href="whatsapp://send?phone=584146172019?text=Hola,%20me%20interesa%20recibir%20una%20consulta"
+                        >
+                            <span>💬</span>
+                            Whatsapp
+                            <span>
+                                <Whatsapp />
+                            </span>
+                        </BannerLink>
+                    </li>
+                    <li>
+                        <BannerLink
+                            rel="nofollow"
+                            title="enviar un correo electronico a Jesus al correo de yidev27@gmail.com"
+                            classes="bg-orange-400/40 text-white/80 hover:text-white hover:bg-orange-800/30"
+                            href="mailto:yidev27@gmail.com"
+                        >
+                            <span>💬</span>
+                            Email
+                            <span>📧</span>
+                        </BannerLink>
+                    </li>
+                </ul>
             </section>
         </Card>
-        <div class="mx-auto flex max-w-xl flex-col gap-1 py-6 text-center text-slate-300/70">
+        <footer class="mx-auto flex max-w-xl flex-col gap-1 py-6 text-center text-slate-300/70">
             <p>Copyleft © 2024 🚀 Per Aspera Ad Astra</p>
             <p class="font-semibold tracking-wider text-slate-300">Desarrollado por @yidev27</p>
             <a
@@ -116,7 +111,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
             >
                 inspirado en @gndx
             </a>
-        </div>
+        </footer>
     </main>
     <script>
         function getRandomArbitrary(min: number, max: number) {
