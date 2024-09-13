@@ -1,4 +1,4 @@
-export const isMobileDevice = () => {
+export const isNotMobileDevice = () => {
     const userAgent = navigator.userAgent;
 
     // Regex patterns for mobile user agents
