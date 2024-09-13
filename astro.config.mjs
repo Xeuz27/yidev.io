@@ -2,14 +2,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
-/*add site  */
-
-import vercel from '@astrojs/vercel/serverless';
-
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://yidev.vercel.app/',
+    site: 'https://xeuz27.github.io',
     integrations: [tailwind()],
-    output: 'server',
-    adapter: vercel(),
 });
