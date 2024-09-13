@@ -8,9 +8,7 @@ const { title, description, image } = Astro.props;
     <head>
         <BaseHead title={title} description={description} ogImage={image} />
     </head>
-    <body
-        class="relative flex max-h-dvh min-h-dvh items-center justify-center overflow-hidden pt-4"
-    >
+    <body class="relative flex min-h-dvh items-center justify-center overflow-hidden">
         <slot />
         <div id="night" class="night absolute inset-0 z-10"></div>
     </body>
