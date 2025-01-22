@@ -5,8 +5,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://obsoleto.vercel.app/',
-    base: '/linktree/',
+    site: 'https://yidev.vercel.app/linktree',
     integrations: [tailwind()],
     output: 'server',
     adapter: vercel(),
